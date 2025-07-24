@@ -1,0 +1,9 @@
+.container::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.container {
+  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
