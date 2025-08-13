@@ -1,9 +1,25 @@
+/* Hide scrollbar for Webkit browsers */
 .container::-webkit-scrollbar {
   width: 0px;
   background: transparent;
 }
 
+/* Hide scrollbar for Firefox */
 .container {
-  scrollbar-width: none;  /* Firefox */
-  -ms-overflow-style: none; /* IE 10+ */
+  scrollbar-width: none;  
+  -ms-overflow-style: none; 
+}
+
+/* Smooth scrolling */
+.container {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar-hide utility */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
