@@ -41,15 +41,30 @@ function App() {
 
     try {
       setLoader(true);
+
+      if (!fullUrl) {
+        alert("API URL is not set. Please check your environment variables.");
+        setLoader(false);
+        return;
+      }
+
       const response = await fetch(fullUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
+
+      if (!response.ok) {
+        console.error("API returned status:", response.status, response.statusText);
+        alert(`API Error: ${response.status} ${response.statusText}`);
+        setLoader(false);
+        return;
+      }
+
       const data = await response.json();
 
       if (!data?.candidates?.[0]?.content?.parts?.[0]?.text) {
-        throw new Error("Invalid API response");
+        throw new Error("Invalid API response structure");
       }
 
       let dataString = data.candidates[0].content.parts[0].text;
@@ -66,6 +81,7 @@ function App() {
 
       setQuestion("");
       setSelectedHistory("");
+
       setTimeout(() => {
         if (scrollToAns.current) {
           scrollToAns.current.scrollTop = scrollToAns.current.scrollHeight;
@@ -79,7 +95,7 @@ function App() {
     }
   };
 
-  const isEnter = (e) => {
+  const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       e.preventDefault();
       askQuestion();
@@ -90,7 +106,6 @@ function App() {
     if (selectedHistory) {
       askQuestion();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedHistory]);
 
   useEffect(() => {
@@ -161,12 +176,12 @@ function App() {
             </div>
           )}
 
-          {/* --- REVERTED SEARCH INPUT UI TO YOUR ORIGINAL STYLE --- */}
+          {/* Your original search input UI */}
           <div className="dark:bg-zinc-800 bg-red-100 pr-5 p-1 w-1/2 dark:text-white m-auto rounded-4xl border border-zinc-700 flex h-16">
             <input
               type="text"
               value={question}
-              onKeyDown={isEnter}
+              onKeyDown={handleKeyDown}
               onChange={(e) => setQuestion(e.target.value)}
               placeholder="Ask me anything"
               className="w-full h-full p-3 outline-none"
