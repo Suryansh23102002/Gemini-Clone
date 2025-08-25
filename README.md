@@ -1,13 +1,69 @@
-# React + Vite
+# Gemini-Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Gemini-Clone is a web-based application built to replicate the look, feel, and functionality of Google's Gemini AI platform. The project serves as a practical demonstration of modern front-end development using JavaScript, React, CSS, and HTML.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Interactive UI:** Responsive and visually appealing user interface inspired by Gemini.
+- **Chat Simulation:** Simulates conversational AI interactions.
+- **Dynamic Components:** Utilizes React for real-time updates and user engagement.
+- **Custom Styling:** Stylish design with CSS mimicking Gemini’s aesthetics.
+- **Easy Customization:** Modular codebase for extending features and functionality.
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-"# Gemini-Clone" 
+- **React** – Handles all core logic and dynamic interactions.
+- **CSS** – Ensures an attractive, responsive layout.
+- **HTML** – Provides the structural foundation for the app.
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js and npm (optional, if you plan to extend or add build tools)
+- Modern web browser
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Suryansh23102002/Gemini-Clone.git
+   ```
+2. **Navigate to the project directory:**
+   ```bash
+   cd Gemini-Clone
+   ```
+3. **Open `index.html` in your browser to run the app.**
+
+### Usage
+
+- Start a conversation in the chat window.
+- Explore the UI features.
+- Customize styles and scripts as needed for your use case.
+
+## Folder Structure
+
+```
+Gemini-Clone/
+├── index.html
+├── style.css
+├── script.js
+├── assets/
+└── README.md
+```
+
+## Contributing
+
+Contributions are welcome! Please fork the repository, make your changes, and submit a pull request.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Author
+
+[Suryansh23102002](https://github.com/Suryansh23102002)
+
+---
+
+Let me know if you want to add project screenshots, demo links, or more details!
